@@ -112,7 +112,7 @@ def test_core(
     output: Text = DEFAULT_RESULTS_PATH,
     additional_arguments: Optional[Dict] = None,
 ) -> None:
-    """Checks if models are present and then runs the test function in the event loop."""
+    """Tests a trained Core model against a set of test stories."""
     import rasa.model
     from rasa.shared.nlu.interpreter import RegexInterpreter
     from rasa.core.agent import Agent

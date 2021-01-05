@@ -117,29 +117,32 @@ def run_core_test(args: argparse.Namespace) -> None:
 
 
 async def run_nlu_test_async(
-    config: Optional[Union[Text, Dict]] = None,
-    data_path: Optional[Text] = None,
-    models_path: Optional[Text] = None,
-    output_dir: Optional[Text] = None,
-    cross_validation: Optional[bool] = None,
-    percentages: Optional[List[int]] = None,
-    runs: Optional[int] = None,
-    no_errors: Optional[bool] = None,
-    all_args: Optional[Dict[Text, Any]] = None,
+    config: Optional[Union[Text, List[Text]]],
+    data_path: Text,
+    models_path: Text,
+    output_dir: Text,
+    cross_validation: bool,
+    percentages: List[int],
+    runs: int,
+    no_errors: bool,
+    all_args: Dict[Text, Any],
 ) -> None:
     """Runs NLU tests.
 
     Args:
-        all_args: all arguments gathered in a Dict so we can pass them to 'perform_nlu_cross_validation' and
-                  'test_nlu' as parameter.
-        config: config file or a list of multiple config files.
+        all_args: all arguments gathered in a Dict so we can pass it as one argument
+                  to other functions.
+        config: it refers to the model configuration file. It can be a single file or
+                a list of multiple files or a folder with multiple config files inside.
         data_path: path for the nlu data.
-        models_path: the path for the nlu data.
-        output_dir: the directory for the results to be saved.
-        cross_validation: boolean value that indicates if it should test the model using cross validation or not.
+        models_path: path to a trained Rasa model.
+        output_dir: output path for any files created during the evaluation.
+        cross_validation: indicates if it should test the model using cross validation
+                          or not.
         percentages: defines the exclusion percentage of the training data.
-        runs: used in 'compare_nlu_models' and indicates the number of comparison runs.
-        no_errors: boolean value that indicates if incorrect predictions should be written to a file or not.
+        runs: number of comparison runs to make.
+        no_errors: indicates if incorrect predictions should be written to a file
+                   or not.
     """
     from rasa.test import compare_nlu_models, perform_nlu_cross_validation, test_nlu
 
@@ -193,10 +196,13 @@ async def run_nlu_test_async(
 
 
 def run_nlu_test(args: argparse.Namespace) -> None:
-    """Adding this function layer to be able to run run_nlu_test_async in the event loop.
+    """Runs NLU tests.
 
-    I have run_nlu_test_async to be able to have await calls inside. That way I can call functions
-    test_nlu and compare_nlu_models with await statements since they are async functions.
+    Args:
+        args: all arguments that were set or omitted in the command line and then
+              were parsed or populated with their default values respectively.
+              These arguments define the specific parameters/conditions under which
+              the NLU tests should run.
     """
     rasa.utils.common.run_in_loop(
         run_nlu_test_async(
