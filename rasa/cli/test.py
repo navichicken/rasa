@@ -199,10 +199,7 @@ def run_nlu_test(args: argparse.Namespace) -> None:
     """Runs NLU tests.
 
     Args:
-        args: all arguments that were set or omitted in the command line and then
-              were parsed or populated with their default values respectively.
-              These arguments define the specific parameters/conditions under which
-              the NLU tests should run.
+        args: the parsed CLI arguments for 'rasa test nlu'.
     """
     rasa.utils.common.run_in_loop(
         run_nlu_test_async(
