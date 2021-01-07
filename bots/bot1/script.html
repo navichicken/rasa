@@ -1,0 +1,44 @@
+<script>
+var HttpClient = function() { //creo q en está funcioón verifica si el request es correcto
+    this.get = function(aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function() {
+            if (anHttpRequest.readyState == 4 && // readyState == 4 que el request se ha completado
+                anHttpRequest.status == 200) // status == 200 que el request ha tenido exito  
+                aCallback(anHttpRequest.responseText); // devuelve la consulta en un string
+            }
+            anHttpRequest.open("GET", aUrl, true); //  open() reinicia la solicitud
+            anHttpRequest.send(null); //envia el request al server
+        }
+    }
+var theurl = 'https:\/\/shop.qaror.com/api/storefront/cart';
+var client = new HttpClient();
+client.get(theurl, function(response) {
+    var response1 = JSON.parse(response);
+    var currencyCode = response1[0].currency.code; //currency
+    var newCartArray = []; // items del carrito supoongo
+    for (var i = 0; i < response1[0].lineItems.physicalItems.length; i++) {
+
+        newCartArray.push({
+            'name': response1[0].lineItems.physicalItems[i].name,
+            'id': response1[0].lineItems.physicalItems[i].sku,
+            'brand': "Tech",
+            'quantity': response1[0].lineItems.physicalItems[i].quantity,
+            'price': response1[0].lineItems.physicalItems[i].extendedListPrice
+        })
+    }
+    dataLayer.push({ // datalayer supongo que es una capa de datos de una pag web 
+                    // dónde puedes agregar variables con info de la pag
+        'event': 'checkout', // aquí 'variable': 'valor'
+        'ecommerce': {
+            'currencyCode': currencyCode,
+            'checkout': {
+                'actionField': {
+                    'step': '0'
+                },
+                'products': newCartArray
+            }
+        }
+    });
+}); 
+</script>

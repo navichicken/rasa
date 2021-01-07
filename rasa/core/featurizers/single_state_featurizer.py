@@ -202,6 +202,31 @@ class SingleStateFeaturizer:
 
         return output
 
+    def prepare_from_domain_old(self, domain: Domain) -> None:
+        """Helper method to init based on domain."""
+
+        pass
+
+    def encode_old(self, state: Dict[Text, float]) -> np.ndarray:
+        """Encode user input."""
+
+        raise NotImplementedError(
+            "SingleStateFeaturizer must have "
+            "the capacity to "
+            "encode states to a feature vector"
+        )
+
+    @staticmethod
+    def action_as_one_hot_old(action: Text, domain: Domain) -> np.ndarray:
+        """Encode system action as one-hot vector."""
+
+        if action is None:
+            return np.ones(domain.num_actions, dtype=int) * -1
+
+        y = np.zeros(domain.num_actions, dtype=int)
+        y[domain.index_for_action(action)] = 1
+        return y
+
     def encode_state(
         self, state: State, interpreter: NaturalLanguageInterpreter
     ) -> Dict[Text, List["Features"]]:

@@ -1,0 +1,68 @@
+version: "2.0"
+
+intents:
+  - saludo
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - con_c_hereditario
+  - con_sintomas_c_cervical
+  - con_fatiga
+  - con_superar_fatiga
+  - con_normalidad
+
+responses:
+  utter_bot_saludo:
+  - text: "Hola!!"
+
+  utter_p_consulta:
+  - text: "¿Cuál es tu consulta?"
+
+  utter_p_hay_otra_pregunta:
+  - text: "¿Tienes otra consulta?"
+
+  utter_q_afrontar_s:
+  - text: "¿Desear saber algunos consejos para aminorar la fatiga?"
+
+  utter_c_hereditario:
+  - text: "No te preocupes. Es importante que sepas que la mayoría de los cánceres no
+  se transmiten de una generación a otra. Solo alrededor de 5 a 10 por
+  ciento de los cánceres más comunes (tales como cáncer de seno, de colon
+   y de próstata) son hereditarios."
+
+  r_sintomas_c_cervical:
+  - text: "En sus primeras etapas, el cáncer de cuello uterino a menudo no presenta síntomas. Los síntomas que se pueden observar en la enfermedad avanzada incluyen:
+           • Sangrado vaginal anormal entre períodos
+           menstruales o durante/después de mantener
+           relaciones sexuales o hacer ejercicio.
+           • Dolor pélvico.
+           • Secreción vaginal.
+           • Dolor o incomodidad durante el sexo"
+
+  utter_fatiga:
+  - text: "Sí, la fatiga o cansancio es uno de los síntomas más comunes de han superado el cáncer."
+
+  utter_superar_fatiga:
+  - text: "Aquí hay algunas ideas para superar el cansancio:
+           ✔ Planifique su día
+           ✔ Ahorre su energía al hacer las cosas de otro modo.
+           ✔ Tome siestas breves o tiempos de descanso entre actividades
+           ✔ Trate de ir a dormir y despertarse a la misma hora todos los días.
+           ✔ Haga lo que le gusta hacer, pero en menor medida.
+           ✔ Deje que le ayuden los demás.
+           ✔ Elija cómo emplear su energía.
+           ✔ Piense en unirse a un grupo de apoyo."
+
+  utter_did_that_help:
+  - text: "¿Eso resuelve tus dudas?"
+
+  utter_goodbye:
+  - text: "Chau"
+
+  utter_iamabot:
+  - text: "Soy un bot, creado para responder tus consultas :)"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

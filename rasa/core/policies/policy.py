@@ -34,6 +34,7 @@ from rasa.shared.core.generator import TrackerWithCachedStates
 from rasa.core.constants import DEFAULT_POLICY_PRIORITY
 from rasa.shared.core.constants import USER, SLOTS, PREVIOUS_ACTION, ACTIVE_LOOP
 from rasa.shared.nlu.constants import ENTITIES, INTENT, TEXT, ACTION_TEXT, ACTION_NAME
+from rasa.core.training.data import DialogueTrainingData
 
 if TYPE_CHECKING:
     from rasa.shared.nlu.training_data.features import Features
@@ -178,6 +179,38 @@ class Policy:
             label_ids = label_ids[:max_training_samples]
 
         return state_features, label_ids
+
+    def featurize_for_training_old(
+            self,
+            training_trackers: List[DialogueStateTracker],
+            domain: Domain,
+            **kwargs: Any,
+    ) -> DialogueTrainingData:
+        """Transform training trackers into a vector representation.
+
+        The trackers, consisting of multiple turns, will be transformed
+        into a float vector which can be used by a ML model.
+
+        Args:
+            training_trackers:
+                the list of the :class:`rasa.core.trackers.DialogueStateTracker`
+            domain: the :class:`rasa.core.domain.Domain`
+
+        Returns:
+            the :class:`rasa.core.training.data.DialogueTrainingData`
+        """
+
+        training_data = self.featurizer.featurize_trackers_old(training_trackers, domain)
+
+        max_training_samples = kwargs.get("max_training_samples")
+        if max_training_samples is not None:
+            logger.debug(
+                "Limit training data to {} training samples."
+                "".format(max_training_samples)
+            )
+            training_data.limit_training_data_to(max_training_samples)
+
+        return training_data
 
     def train(
         self,

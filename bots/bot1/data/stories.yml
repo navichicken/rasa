@@ -1,0 +1,78 @@
+version: "2.0"
+
+stories:
+
+- story: hereditary path 1
+  steps:
+  - intent: saludo
+  - action: bot_saludo
+  - action: p_consulta
+  - intent: con_c_hereditario
+  - action: r_c_hereditario
+  - action: hay_otra_pregunta
+  - intent: affirm
+  - action: p_consulta
+
+- story: hereditary path 2
+  steps:
+  - intent: saludo
+  - action: bot_saludo
+  - action: p_consulta
+  - intent: con_c_hereditario
+  - action: r_c_hereditario
+  - action: hay_otra_pregunta
+  - intent: deny
+  - action: utter_goodbye
+
+- story: symptomn fatiga path 1
+  steps:
+  - intent: saludo
+  - action: bot_saludo
+  - action: p_consulta
+  - intent: con_fatiga
+  - action: r_fatiga
+  - action: q_afrontar_s
+  - intent: deny
+  - action: hay_otra_pregunta
+  - intent: affirm
+  - action: p_consulta
+
+- story: symptomn fatiga path 2
+  steps:
+  - intent: saludo
+  - action: bot_saludo
+  - action: p_consulta
+  - intent: con_fatiga
+  - action: r_fatiga
+  - action: q_afrontar_s
+  - intent: affirm
+  - action: r_superar_fatiga
+  - action: hay_otra_pregunta
+  - intent: affirm
+  - action: p_consulta
+
+
+- story: symptomn fatiga path 3
+  steps:
+  - intent: saludo
+  - action: bot_saludo
+  - action: p_consulta
+  - intent: con_fatiga
+  - action: r_fatiga
+  - action: q_afrontar_s
+  - intent: affirm
+  - action: r_superar_fatiga
+  - action: hay_otra_pregunta
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: say goodbye path
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: say goodbye path
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

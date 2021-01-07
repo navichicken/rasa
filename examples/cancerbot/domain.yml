@@ -1,0 +1,41 @@
+version: "1.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - consult_hereditary
+  - consult_symptom
+
+responses:
+  utter_greet:
+  - text: "Hola!!, ¿cuál es tu consulta?"
+
+  utter_hereditary:
+  - text: "No te preocupes. Es importante que sepas que la mayoría de los cánceres no 
+  se transmiten de una generación a otra. Solo alrededor de 5 a 10 por 
+  ciento de los cánceres más comunes (tales como cáncer de seno, de colon
+   y de próstata) son hereditarios."
+
+  utter_symptom_comun:
+  - text: "Sí, la fatiga o cansancio es uno de los síntomas más comunes de han superado el cáncer."
+
+  utter_did_that_help:
+  - text: "¿Eso resuelve tus dudas?"
+
+  utter_happy:
+  - text: "Que bueno haberte ayudado!"
+
+  utter_goodbye:
+  - text: "Chau"
+
+  utter_iamabot:
+  - text: "Soy un bot, creado para responder tus consultas :)"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

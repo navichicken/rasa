@@ -6,7 +6,7 @@ import logging
 from rasa.shared.exceptions import RasaException
 from rasa.shared.nlu.constants import TEXT, INTENT
 from tqdm import tqdm
-from typing import Tuple, List, Optional, Dict, Text, Union
+from typing import Tuple, List, Optional, Dict, Text, Union, Any
 import numpy as np
 
 from rasa.core.featurizers.single_state_featurizer import SingleStateFeaturizer
@@ -17,6 +17,7 @@ from rasa.shared.nlu.interpreter import NaturalLanguageInterpreter
 from rasa.shared.core.constants import USER
 import rasa.shared.utils.io
 from rasa.shared.nlu.training_data.features import Features
+from rasa.core.training.data import DialogueTrainingData
 from rasa.shared.constants import INTENT_MESSAGE_PREFIX
 
 FEATURIZER_FILE = "featurizer.json"
@@ -39,7 +40,8 @@ class TrackerFeaturizer:
     """Base class for actual tracker featurizers."""
 
     def __init__(
-        self, state_featurizer: Optional[SingleStateFeaturizer] = None
+        self, state_featurizer: Optional[SingleStateFeaturizer] = None,
+            use_intent_probabilities: bool = False,
     ) -> None:
         """Initialize the tracker featurizer.
 
@@ -47,6 +49,7 @@ class TrackerFeaturizer:
             state_featurizer: The state featurizer used to encode the states.
         """
         self.state_featurizer = state_featurizer
+        self.use_intent_probabilities = use_intent_probabilities
 
     @staticmethod
     def _create_states(tracker: DialogueStateTracker, domain: Domain) -> List[State]:
@@ -60,6 +63,41 @@ class TrackerFeaturizer:
             a list of states
         """
         return tracker.past_states(domain)
+
+    def _pad_states_old(self, states: List[Any]) -> List[Any]:
+        """Pads states."""
+
+        return states
+
+    def _featurize_states_old(
+            self, trackers_as_states: List[List[Dict[Text, float]]]
+    ) -> Tuple[np.ndarray, List[int]]:
+        """Create X."""
+
+        features = []
+        true_lengths = []
+
+        for tracker_states in trackers_as_states:
+            dialogue_len = len(tracker_states)
+
+            # len(trackers_as_states) = 1 means
+            # it is called during prediction or we have
+            # only one story, so no padding is needed
+
+            if len(trackers_as_states) > 1:
+                tracker_states = self._pad_states_old(tracker_states)
+
+            story_features = [
+                self.state_featurizer.encode_old(state) for state in tracker_states
+            ]
+
+            features.append(story_features)
+            true_lengths.append(dialogue_len)
+
+        # noinspection PyPep8Naming
+        X = np.array(features)
+
+        return X, true_lengths
 
     def _featurize_states(
         self,
@@ -78,8 +116,10 @@ class TrackerFeaturizer:
     def _convert_labels_to_ids(
         trackers_as_actions: List[List[Text]], domain: Domain
     ) -> np.ndarray:
+        logger.info("Trackers_as_actions")
+        logger.info(trackers_as_actions)
         # store labels in numpy arrays so that it corresponds to np arrays of input features
-        return np.array(
+        result = np.array(
             [
                 np.array(
                     [domain.index_for_action(action) for action in tracker_actions]
@@ -87,6 +127,11 @@ class TrackerFeaturizer:
                 for tracker_actions in trackers_as_actions
             ]
         )
+
+        logger.info("LABELS TO IDS")
+        logger.info(result)
+
+        return result
 
     def training_states_and_actions(
         self, trackers: List[DialogueStateTracker], domain: Domain
@@ -103,6 +148,34 @@ class TrackerFeaturizer:
         raise NotImplementedError(
             "Featurizer must have the capacity to encode trackers to feature vectors"
         )
+
+    def training_states_and_actions_old(
+        self, trackers: List[DialogueStateTracker], domain: Domain
+    ) -> Tuple[List[List[Dict]], List[List[Text]]]:
+        """Transforms list of trackers to lists of states and actions."""
+
+        raise NotImplementedError(
+            "Featurizer must have the capacity to encode trackers to feature vectors OLD"
+        )
+
+    def featurize_trackers_old(
+            self, trackers: List[DialogueStateTracker], domain: Domain
+    ) -> DialogueTrainingData:
+        """Create training data."""
+
+        if self.state_featurizer is None:
+            raise ValueError(
+                "Variable 'state_featurizer' is not set. Provide "
+                "'SingleStateFeaturizer' class to featurize trackers."
+            )
+
+        self.state_featurizer.prepare_from_domain_old(domain)
+        (trackers_as_states, trackers_as_actions) = self.training_states_and_actions_old(trackers, domain)
+        # noinspection PyPep8Naming
+        X, true_lengths = self._featurize_states_old(trackers_as_states)
+        y = self._featurize_labels_old(trackers_as_actions, domain)
+
+        return DialogueTrainingData(X, y, true_lengths)
 
     def featurize_trackers(
         self,
@@ -137,11 +210,44 @@ class TrackerFeaturizer:
         trackers_as_states, trackers_as_actions = self.training_states_and_actions(
             trackers, domain
         )
-
         tracker_state_features = self._featurize_states(trackers_as_states, interpreter)
-        label_ids = self._convert_labels_to_ids(trackers_as_actions, domain)
-
+        label_ids = self._featurize_labels_old(trackers_as_actions, domain)
         return tracker_state_features, label_ids
+
+    def _featurize_labels_old(
+        self, trackers_as_actions: List[List[Text]], domain: Domain
+    ) -> np.ndarray:
+        """Create y."""
+
+        labels = []
+        for tracker_actions in trackers_as_actions:
+
+            if len(trackers_as_actions) > 1:
+                tracker_actions = self._pad_states_old(tracker_actions)
+
+            story_labels = [
+                self.state_featurizer.action_as_one_hot_old(action, domain)
+                for action in tracker_actions
+            ]
+
+            labels.append(story_labels)
+
+        y = np.array(labels)
+        if y.ndim == 3 and isinstance(self, MaxHistoryTrackerFeaturizer):
+            # if it is MaxHistoryFeaturizer, remove time axis
+            y = y[:, 0, :]
+
+        return y
+
+    # noinspection PyPep8Naming
+    def create_X(
+        self, trackers: List[DialogueStateTracker], domain: Domain
+    ) -> np.ndarray:
+        """Create X for prediction."""
+
+        trackers_as_states = self.prediction_states(trackers, domain)
+        X, _ = self._featurize_states(trackers_as_states)
+        return X
 
     def prediction_states(
         self, trackers: List[DialogueStateTracker], domain: Domain
@@ -222,6 +328,15 @@ class FullDialogueTrackerFeaturizer(TrackerFeaturizer):
     Training data is padded up to the length of the longest dialogue with -1.
     """
 
+    @staticmethod
+    def _calculate_max_len(trackers_as_actions) -> Optional[int]:
+        """Calculate the length of the longest dialogue."""
+
+        if trackers_as_actions:
+            return max([len(states) for states in trackers_as_actions])
+        else:
+            return None
+
     def training_states_and_actions(
         self, trackers: List[DialogueStateTracker], domain: Domain
     ) -> Tuple[List[List[State]], List[List[Text]]]:
@@ -236,7 +351,7 @@ class FullDialogueTrackerFeaturizer(TrackerFeaturizer):
         Returns:
             A tuple of list of states and list of actions.
         """
-
+        logger.info("ENTRO A training_states_and_actions FullDialogueTrackerFeaturizer")
         trackers_as_states = []
         trackers_as_actions = []
 
@@ -278,6 +393,57 @@ class FullDialogueTrackerFeaturizer(TrackerFeaturizer):
 
             trackers_as_states.append(states[:-1])
             trackers_as_actions.append(actions)
+
+        return trackers_as_states, trackers_as_actions
+
+    def training_states_and_actions_old(
+        self, trackers: List[DialogueStateTracker], domain: Domain
+    ) -> Tuple[List[List[Dict]], List[List[Text]]]:
+        """Transforms list of trackers to lists of states and actions.
+
+        Training data is padded up to the length of the longest dialogue with -1.
+        """
+
+        trackers_as_states = []
+        trackers_as_actions = []
+
+        logger.debug(
+            "Creating states and action examples from "
+            "collected trackers (by {}({}))..."
+            "".format(type(self).__name__, type(self.state_featurizer).__name__)
+        )
+        pbar = tqdm(trackers, desc="Processed trackers", disable=True)
+        for tracker in pbar:
+            states = self._create_states(tracker, domain)
+
+            delete_first_state = False
+            actions = []
+            for event in tracker.applied_events():
+                if isinstance(event, ActionExecuted):
+                    if not event.unpredictable:
+                        # only actions which can be
+                        # predicted at a stories start
+                        actions.append(event.action_name)
+                    else:
+                        # unpredictable actions can be
+                        # only the first in the story
+                        if delete_first_state:
+                            raise Exception(
+                                "Found two unpredictable "
+                                "actions in one story."
+                                "Check your story files."
+                            )
+                        else:
+                            delete_first_state = True
+
+            if delete_first_state:
+                states = states[1:]
+
+            trackers_as_states.append(states[:-1])
+            trackers_as_actions.append(actions)
+
+       # self.max_len = self._calculate_max_len(trackers_as_actions)
+       # logger.debug(f"The longest dialogue has {self.max_len} actions.")
 
         return trackers_as_states, trackers_as_actions
 
@@ -371,7 +537,7 @@ class MaxHistoryTrackerFeaturizer(TrackerFeaturizer):
         Returns:
             A tuple of list of states and list of actions.
         """
-
+        logger.info("LENTRO A training_states_and_actions MaxHistoryTrackerFeaturizer")
         trackers_as_states = []
         trackers_as_actions = []
 

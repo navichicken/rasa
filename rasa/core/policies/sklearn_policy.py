@@ -203,7 +203,15 @@ class SklearnPolicy(Policy):
         }
         # turning it into OrderedDict so that the order of features is the same
         attribute_data = OrderedDict(attribute_data)
-        return np.concatenate(list(attribute_data.values()), axis=-1)
+        salida = np.concatenate(list(attribute_data.values()), axis=-1)
+        logger.info("PRE PROCESS DATA SKLEARN (-1)")
+        logger.info(salida)
+        logger.info("reshape")
+        new_salida = salida.reshape((129, 5, -1))
+        logger.info("shape")
+        logger.info(new_salida.shape)
+        logger.info(new_salida)
+        return salida
 
     def _search_and_score(self, model, X, y, param_grid) -> Tuple[Any, Any]:
         search = GridSearchCV(
@@ -232,9 +240,24 @@ class SklearnPolicy(Policy):
         model = self.model_architecture(**self._train_params)
         score = None
         # Note: clone is called throughout to avoid mutating default arguments.
-        self.label_encoder = clone(self.label_encoder).fit(label_ids)
+        #self.label_encoder = clone(self.label_encoder).fit(label_ids)
         X = self._preprocess_data(training_data)
+        logger.info("llego al X 244")
         y = self.label_encoder.transform(label_ids)
+        logger.info("X")
+        logger.info(X.astype(int))
+        logger.info("LABELSS")
+
+        labels = np.array([]).reshape(0,domain.num_actions).astype(int)
+
+        for label_id in label_ids:
+            ##fila = np.zeros(domain.num_actions, dtype=int)
+            fila = [0] * domain.num_actions
+            fila[label_id[0]] = 1
+            fila = np.array([fila])
+            labels = np.append(labels,fila, axis=0)
+
+        logger.info(labels)
 
         if self.shuffle:
             X, y = sklearn_shuffle(X, y)

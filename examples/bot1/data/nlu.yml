@@ -1,0 +1,76 @@
+version: "2.0"
+
+nlu:
+- intent: saludo
+  examples: |
+    - hey
+    - hola
+    - hi
+    - hola alli
+    - buenos dias
+    - buenas tardes
+    - buenas noches
+    - estas
+    - hey tu
+    - vamos
+    - hey amigo
+
+- intent: goodbye
+  examples: |
+    - buenas tardes
+    - chau
+    - adios
+    - nos vemos luego
+    - buenas noches
+    - bye
+
+- intent: affirm
+  examples: |
+    - si
+    - deacuerdo
+    - claro
+    - eso suena bien
+    - correcto
+    - ok
+
+- intent: deny
+  examples: |
+    - no
+    - nunca
+    - ninguna
+    - no me gusta eso
+    - no hay forma
+    - por ahora no
+
+- intent: con_c_hereditario
+  examples: |
+    - ¿Mis hijos pueden padecer cáncer?
+    - ¿El cáncer es hereditario?
+
+- intent: con_sintomas_c_cervical
+  examples: |
+    - ¿Cuáles son los síntomas del cáncer de cuello uterino?
+    - ¿Cómo detectar el cáncer de cuello uterino?
+
+- intent: con_fatiga
+  examples: |
+    - ¿Es normal tener fatiga?
+    - Ultimamente he estado muy cansado, es normal?
+    - Me siento cansado, es normal?
+
+- intent: con_superar_fatiga
+  examples: |
+    - ¿Cómo superar la fatiga?
+    - Alguna recomendación para setirme menos cansado
+
+- intent: con_normalidad
+  examples: |
+    - ¿Qué es lo normal después del tratamiento de cáncer?
+    - ¿Qué debo hacer acabado mi tratamiento de cáncer?
+
+- intent: bot_challenge
+  examples: |
+    - ¿eres un bot?
+    - ¿eres un humano?
+    - ¿estoy hablando con un bot?
+    - ¿estoy hablando con un humano?
