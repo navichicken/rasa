@@ -1,0 +1,290 @@
+[
+  {
+    "text": "chau",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.3201560784161988
+    }
+  },
+  {
+    "text": "bye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.45481539127059517
+    }
+  },
+  {
+    "text": "chao",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.38492581275386595
+    }
+  },
+  {
+    "text": "si",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "con_superar_fatiga",
+      "confidence": 0.2408798501890281
+    }
+  },
+  {
+    "text": "deacuerdo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.35390579542156086
+    }
+  },
+  {
+    "text": "eso suena bien",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "con_fatiga",
+      "confidence": 0.18226268027760778
+    }
+  },
+  {
+    "text": "nel",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.1826593282361923
+    }
+  },
+  {
+    "text": "nunca",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "con_fatiga",
+      "confidence": 0.20504630959450262
+    }
+  },
+  {
+    "text": "no hay forma",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "con_superar_fatiga",
+      "confidence": 0.22514539748625348
+    }
+  },
+  {
+    "text": "\u00bfCu\u00e1les son los s\u00edntomas del c\u00e1ncer de cuello uterino?",
+    "intent": "con_sintomas_c_cervical",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.20322227260807507
+    }
+  },
+  {
+    "text": "\u00bfC\u00f3mo detectar el c\u00e1ncer de cuello uterino?",
+    "intent": "con_sintomas_c_cervical",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.20593555798041174
+    }
+  },
+  {
+    "text": "\u00bfCuales son los sintomas del cancer cervical?",
+    "intent": "con_sintomas_c_cervical",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.18013738877097352
+    }
+  },
+  {
+    "text": "\u00bfEs normal tener fatiga?",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "con_superar_fatiga",
+      "confidence": 0.13672640475242467
+    }
+  },
+  {
+    "text": "quiero sentirme menos cansada",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.16573444371425475
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 es lo normal despu\u00e9s del tratamiento de c\u00e1ncer?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.16074963820479868
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 debo hacer acabado mi tratamiento de c\u00e1ncer?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.15702956965572176
+    }
+  },
+  {
+    "text": "\u00bfQue habitos deber\u00eda tener acabado mi tratamiento de cancer?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.16284308369979633
+    }
+  },
+  {
+    "text": "hey",
+    "intent": "saludo",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.4039855290240556
+    }
+  },
+  {
+    "text": "nos vemos luego",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.18930101507198607
+    }
+  },
+  {
+    "text": "claro",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.1815426695383292
+    }
+  },
+  {
+    "text": "correcto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.16687668224325536
+    }
+  },
+  {
+    "text": "ok",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.28551304400109384
+    }
+  },
+  {
+    "text": "ninguna",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.19934350226948866
+    }
+  },
+  {
+    "text": "no me gusta eso",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "con_superar_fatiga",
+      "confidence": 0.2004524494079505
+    }
+  },
+  {
+    "text": "por ahora no",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.19339505378368768
+    }
+  },
+  {
+    "text": "\u00bfEl c\u00e1ncer es hereditario?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "con_sintomas_c_cervical",
+      "confidence": 0.24364103663757034
+    }
+  },
+  {
+    "text": "Sintomas comunes del cancer de cuello uterino",
+    "intent": "con_sintomas_c_cervical",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.1981583359939475
+    }
+  },
+  {
+    "text": "Ultimamente he estado muy cansado, es normal?",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.1737448574021494
+    }
+  },
+  {
+    "text": "tengo mucho cansancio",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.1747193639585895
+    }
+  },
+  {
+    "text": "estoy sin ganas de hacer nada",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.1846912748951125
+    }
+  },
+  {
+    "text": "\u00bfC\u00f3mo superar la fatiga?",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "con_normalidad",
+      "confidence": 0.20792218694081954
+    }
+  },
+  {
+    "text": "Alguna recomendaci\u00f3n para setirme menos cansada",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "con_fatiga",
+      "confidence": 0.17761865271204003
+    }
+  },
+  {
+    "text": "\u00bfhay algun medicamento para que me quite la fatiga?",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.18413935468412632
+    }
+  },
+  {
+    "text": "\u00bfque debo hacer ahora que he acabado mi tratamiento?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.17025957564200905
+    }
+  },
+  {
+    "text": "\u00bferes un bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.2001905748422354
+    }
+  },
+  {
+    "text": "\u00bfquien eres?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.1979429707979227
+    }
+  }
+]

@@ -1,0 +1,525 @@
+version: "2.0"
+
+nlu:
+# tema síntomas
+- intent: tema_sintomas
+  examples: |
+    - Sintomas
+    - Síntoma
+    - síntomas postratamiento
+    - tengo el síntoma
+    - Tengo síntomas del cancer de cuello
+    - Síntomas del cancer de cuello uterino?
+    - Los síntomas que tengo son ...
+    - Síntomas del cancer
+
+- intent: con_fatiga
+  examples: |
+    - ¿Es normal tener fatiga?
+    - Ultimamente he estado muy cansada, es normal?
+    - Me siento cansada, es normal?
+    - tengo mucho cansancio
+    - no tengo ganas de hacer nada
+    - estoy sin ganas de hacer nada
+    - me siento muy fatigada
+    - tengo mucha fatiga
+    - me siento cansada a todas horas
+    - me siento bastante agotada
+    - estoy agotada
+
+- intent: con_tension
+  examples: |
+    - Tengo mucha tension
+    - ¿Hay alguna forma de reducir mi estrés?
+    - ¿Hay alguna forma de reducir la tensión?
+    - Estoy muy estresada
+    - Estoy estrasada
+    - como reducir la tensión
+    - como reducir el estrés
+    - tengo mucha ansiedad
+    - siento mucha angustia
+    - me preocupo por todo, no puedo dormir
+    - estoy muy preocupada
+
+- intent: con_depresion
+  examples: |
+    - Tengo depresión
+    - Estoy triste
+    - siento tristeza
+    - Estoy muy triste
+    - Creo que tengo depresión
+    - Estoy deprimida
+    - Me siento muy triste
+    - me siento angustiada
+    - estoy angustiada
+    - tristeza :'(
+    - deprimida
+    - depresión
+
+# tema iniciar etapa
+- intent: tema_iniciar_etapa
+  examples: |
+    - ¿Qué es lo normal después del tratamiento de cáncer?
+    - ¿Qué debo hacer acabado mi tratamiento de cáncer?
+    - ¿He acabado mi tratamiento de cancer que debería hacer?
+    - ¿que debo hacer ahora que he acabado mi tratamiento?
+    - ¿como iniciar esta nueva etapa?
+    - iniciar etapa
+    - consejos para esta nueva etapa
+    - consejos para esta nueva fase
+    - estoy iniciando esta nueva fase
+    - estoy en un inicio de la etapa
+
+- intent: con_cuidados_seguimiento
+  examples: |
+    - Qué son los cuidados de seguimiento
+    - ¿qué son los cuidados de seguimiento?
+    - cuidados de seguimiento
+    - cuidados de seguimiento posteriores al tramiento de cancer
+    - q son los cuidados de seguimiento al paciente
+    - si deseo saber, que son los cuidados de seguimiento
+    - seguimiento cuidados...
+
+- intent: con_que_decir_al_medico
+  examples: |
+    - ¿Qué debo decirle a mi médico?
+    - qué decir al médico en las consultas
+    - como hablar con el médico en las consultas
+    - que decirle al médico
+    - hablar con el médico
+    - que decir al médico en las citas
+    - que decir al médico...
+
+- intent: con_cambio_habitos
+  examples: |
+    - ¿Qué cambios debo hacer en mis habitos?
+    - ¿Debo hacer cambios a mis antiguos habitos?
+    - Nuevos hábitos
+    - Hábitos nuevos
+    - Cambios en mis habitos que puedo pensar hacer
+    - Cambiar mi rutinas
+    - ¿Cómo deben ser mis habitos alimenticios ahora?
+    - consejos para cambiar mis habitos...
+
+# tema mitos y verdades del cancer
+- intent: con_mitos_cancer
+  examples: |
+    - ¿Cuáles son los mitos y verdades del cáncer?
+    - Mitos del cancer
+    - mitos y verdades del cancer
+    - quisiera saber los mitos del cancer
+    - verdades y mitos del cancer
+    - mitos del cancer por favor
+    - ¿Cuales son los mitos del cancer?
+    - mitos y verdades...
+
+
+# tema efectos secundarios tardios
+- intent: con_efectos_secundarios_tardios
+  examples: |
+    - ¿Cuáles son efectos secundarios tardios del tratamiento del cáncer?
+    - efectos secundarios tardios del tratamiento
+    - Efectos secundarios a largo plazo
+    - quisiera saber los efectos secundarios tardios del tratamiento del cáncer
+    - Efectoss secindarios a largo plazo
+    - efectos secundarios tardios por favor
+    - ¿Cuales son los efectos secundarios tardios?
+    - efectos secundarios a largo plazo...
+
+- intent: quimioterapia
+  examples: |
+    - quimioterapia
+    - Quimioterapia
+    - qimioterapia
+    - fue quimioterapia
+    - me dieron quimioterapia
+    - quimio
+    - la quimioterapia
+    - tratamiento de quimioterapia
+    - quimio terapia
+    - quimioterapa
+
+- intent: radioterapia
+  examples: |
+    - radioterapia
+    - Radioterapia
+    - radopterapia
+    - fue radioterapia
+    - me dieron radioterapia
+    - radio
+    - la radioterapia
+    - tratamiento de radioterapia
+    - radio terapia
+    - radioterapa
+    - radiación
+
+- intent: otra_terapia
+  examples: |
+    - otra_terapia
+    - otra terapia
+    - otra
+    - otro
+    - otro tratamiento
+    - otra terapia
+    - otroa
+
+# tema duda_comun
+- intent: duda_comun
+  examples: |
+    - Duda comun
+    - dudas comunes
+    - tengo algunas dudas comunes
+    - tengo dudas....
+    - Dudas tengo
+    - algunas dudas
+    - ¿Dudas comúnes?
+    - Dudas comunes!!
+
+- intent: con_c_hereditario
+  examples: |
+    - ¿Mis hijos pueden padecer cáncer?
+    - ¿Mis hijas pueden tener cancer de cuello uterino tambien?
+    - ¿Mis familiares pueden tener cancer de cuello uterino?
+    - ¿Le puedo pasar mi cancer a mis hijas?
+    - ¿Mi cancer puede pasar a mis hijas o nietas?
+    - ¿Es posible que mis hijas contraigan cancer de cuello uterino?
+    - ¿El cáncer es hereditario?
+    - es hereditaria mi cancer
+
+- intent: con_problemas_familiares
+  examples: |
+    - problemas familiares
+    - manejar problemas familiares
+    - tengo problemas familiares
+    - ¿cómo manejar los problemas familiares?
+    - ¿Cómo sobrellevar los problemas familiares?
+    - Ideas para manejar problemas con mi familia
+    - Como llevar los problemas familiares
+
+- intent: con_grupo_de_ayuda
+  examples: |
+    - grupo de ayuda
+    - grupo de apoyo
+    - me conviene un grupo de apoyo?
+    - me conviene un grupo de ayuda?
+    - debo meterme a un grupo de ayuda?
+    - debo entrar a un grupo de ayuda?
+    - el grupo de apoyo
+
+# chichat
+- intent: cant_help
+  examples: |
+    - creo que no puedes ayudarme
+    - solo eso?
+    - no me entiendes
+    - no puedes ayudarme
+    - ok, creo q no puedes ayudarme
+    - creo que no puedes ayudarme
+    - creo que no me entiendes
+    - no me entiendes!!
+    - no logras entenderme
+    - no me refería a eso
+    - eso no me ayuda
+    - esta conversación no me ayudaa
+    - esto no es lo que quiero
+    - esto es una mierda, no me ayuda en nada
+    - este chatbot no me sirve
+
+
+- intent: bot_challenge
+  examples: |
+    - ¿eres un bot?
+    - ¿eres un humano?
+    - ¿estoy hablando con un bot?
+    - ¿estoy hablando con un humano?
+    - ¿quien eres?
+    - ¿que eres?
+    - como te llamas?
+
+- intent: chitchat_comoestas
+  examples: |
+    - ¿como estas?
+    - ¿que tal como estas?
+    - ¿como te encuentras?
+    - ¿que tal estas?
+    - que tal
+    - como estas!
+    - estas bien?
+    - y tu?
+    - y tu como estas?
+    - y tu que tal?
+    - y tu que tal!
+
+- intent: saludo
+  examples: |
+    - hey
+    - hola
+    - hi
+    - hola alli
+    - buenos dias
+    - buenas tardes
+    - buenas noches
+    - hola como estas
+    - hey tu
+    - hola que tal
+    - buen dia
+    - hola amigo
+    - homa
+    - hello
+    - holaaaaa
+    - holahola
+    - hola hombre
+    - que paso
+    - que pasa
+    - saludar
+    - saludos
+    - hola a todos
+    - hola?
+    - hola hola
+    - hola.........
+
+- intent: despedida
+  examples: |
+    - chau
+    - adios
+    - nos vemos luego
+    - bye
+    - chao
+    - chauu
+    - chau?
+    - chau!
+    - adios amigo
+    - bye bye
+    - adios bot
+    - adios :p
+    - adios por ahora
+    - chau fue un placer hablar contigo
+    - ¡Chau!
+    - adiosito
+    - chausito
+    - chaufas
+    - ahi nos vidrios
+    - ok adios
+    - cuidate
+    - entonces adios
+    - hablar contigo más tarde
+    - salir
+    - cerrar el chat
+    - terminar el chat
+    - adiod
+
+- intent: affirm
+  examples: |
+    - si
+    - s
+    - yes
+    - deacuerdo
+    - acepto
+    - aceptar
+    - ok
+    - okay
+    - sip
+    - yap
+    - ya
+    - esta bien
+    - siiiiiiiiiiii
+    - si, adelante
+    - me encantaria
+    - por supuesto
+    - ah ok
+    - bueno
+    - por favor
+    - si!
+    - si dale!
+    - si esta bien
+    - absolutamente
+    - confirmo
+    - definitivamente
+    - sin dudas
+    - joder si
+    - hecho
+    - me gustaria eso
+    - jezz
+    - yeah
+    - ok amigo
+    - ok genial
+    - ok entiendo
+    - okidoki
+    - okey
+    - perfecto
+    - estupendo
+    - ya hazlo
+    - ya porfavor
+    - sipi
+    - si porque no
+    - si...
+    - sisisisi
+    - si exacto
+    - si señor
+    - si eso es lo que quiero
+    - si eso esta bien
+    - si esta genial
+    - si dame informacion por favor
+    - sipsip
+    - me hiciste una pregunta de si o no y yo respondí si
+    - siu
+    - de verdad
+    - claro
+    - claro que si
+    - si porfavor
+    - correcto
+    - ok
+
+- intent: deny
+  examples: |
+    - no
+    - no quiero
+    - no quiero decir
+    - no quiero contar
+    - no te lo voy a dar
+    - NO
+    - naa
+    - nada
+    - no importa
+    - no hay manera
+    - de ninguna manera
+    - no en realidad no
+    - definitivamente no
+    - absolutamente no
+    - negar
+    - negacion
+    - no quiero aceptar
+    - esto esta mal
+    - no, estoy bien
+    - no :(
+    - no, no puedo
+    - no, noquiero
+    - no gracias por tu ayuda
+    - non
+    - nooooooo
+    - nonononono
+    - nop
+    - nop, asi esta bien
+    - no estoy de acuerdo
+    - no gracias
+    - asi nomás
+    - n
+    - nunca
+    - ninguna
+    - no me gusta eso
+    - no hay forma
+    - por ahora no
+
+- intent: thanks
+  examples: |
+    - gracias
+    - Muchas gracias
+    - Gracias
+    - ¡Gracias!
+    - Gracias bot
+    - Gracias Victoria
+    - Gracias por eso
+    - Genial, gracias
+    - Asombroso, gracias
+    - genial, gracias
+    - ok gracias
+    - ok muchas gracias
+    - perfecto, gracias
+    - gracia
+    - Gracis
+    - gracias de todos modos
+    - gracias por la ayuda
+    - gracias por la informacion :)
+    - si gracias
+    - muchas gracias por todo
+    - muchas gracias Victoria
+    - gracias por tu ayuda
+
+
+
+- intent: need_help
+  examples: |
+    - Necesito ayuda
+    - Tengo una pregunta
+    - Tengo un consulta
+    - tengo una pregunta para ti
+    - tenngo una pregunta
+    - hola tengo una pregunta
+    - ¿tengo una pregunta?
+    - seguro, tengo una pregunta para ti
+    - sí, tengo una preugnta
+    - si, tengo un pregunta para ti
+    - tengo algunas preguntas...
+    - hola victoria, tengo una pregunta para ti
+
+- intent: suggestion
+  examples: |
+    - Sugiero que deberia ...
+    - Yo creo que deberia
+    - Debería saber
+    - Yo sugiero que ...
+    - te sugiero que
+    - tengo una sugerencia
+    - sugiero
+    - sugerencia
+    - sugerir
+
+# out of scope
+- intent: out_of_scope/otro_idioma
+  examples: |
+    - tschüssikowski
+    - 卧槽
+    - αστεία λές
+    - kya hindi me bat kar sakate ho
+    - 你叫什么名字
+    - 你懂中文吗？
+    - 日本語分かる？
+    - tudo bom
+    - kannst du mir helfen
+    - you are human
+    - epdi iruka
+    - wer bist Du?
+    - kannst du auch deutsch?
+    - I'm speaking a non-spanish language
+
+- intent: out_of_scope/otro
+  examples: |
+    - 5+3=?
+    - Puedo morir?
+    - puede youtube hablar?
+    - ¿Puedes darme la contraseña de su centro de datos?
+    - ¿Puedes hacer sándwiches?
+    - ¿Puedes enviarme un uber?
+    - Conoces a Pedro Aquino?
+    - Cuánto es 10 + 68?
+    - ¿Cuántas líneas de codigo?
+    - Cómo están los niños
+    - que tal el viaje
+    - ayudame con mi vida
+    - como aprendiste
+    - como se compara con alexa
+    - como
+    - como lima
+    - como aprobar tesis
+    - genial, me gustaria comprarme una casa
+    - quieres casarte conmigo
+    - crees en Dios?
+    - chasd asdcgah
+    - entiendes?
+    - ves animes o algun manga
+    - tienes algun numero de telefono
+    - te gusta el futbol?
+    - tienes una foto?
+    - puedes hablar de politica?
+    - que es el coronavirus
+    - coronavirus
+    - quiero encontrar nuevos amigos
+    - cual es tu proposito
+    - porque me paso esto a mi
+    - por que el cielo es azul
+    - asdasldañ asdlasñd
+    - easlkjaslej ewoiqjeq
+    - asdaslkdasl
+    - askljdasdk
+    - haz oido hablar de corona
+    - pregunta fuera de alcance

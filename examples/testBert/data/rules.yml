@@ -1,0 +1,41 @@
+version: "2.0"
+
+rules:
+
+- rule: Despedirse cuando el user se despida
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+
+- rule: Decir 'soy un bot', cada vez q el usuario lo rete
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: User necesita ayuda
+  steps:
+  - intent: need_help
+  - action: utter_how_help
+
+- rule: User thanks
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+  - action: utter_p_hay_otra_pregunta
+
+- rule: user habla otro idioma
+  steps:
+  - intent: out_of_scope/otro_idioma
+  - action: utter_out_of_scope/otro_idioma
+  - action: utter_posibilidades
+
+- rule: User pregunta fuera del dominio
+  steps:
+  - intent: out_of_scope/otro
+  - action: utter_out_of_scope/otro
+  - action: utter_posibilidades
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_rephrase

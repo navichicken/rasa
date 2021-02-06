@@ -1,0 +1,299 @@
+version: "2.0"
+
+intents:
+
+# Tema: síntomas
+  - tema_sintomas
+  - con_fatiga
+  - con_tension
+  - con_depresion
+
+# Tema: inicia etapa
+  - tema_iniciar_etapa
+  - con_cuidados_seguimiento
+  - con_que_decir_al_medico
+  - con_cambio_habitos
+
+# Tema: mitos cancer
+  - con_mitos_cancer
+
+# Tema: efectos secundarios a largo plazo
+  - con_efectos_secundarios_tardios
+  - quimioterapia
+  - radioterapia
+  - otra_terapia
+
+# Tema: Duda comun
+  - tema_duda_comun
+  - con_c_hereditario
+  - con_problemas_familiares
+  - con_grupo_de_ayuda
+
+# chitchat
+  - cant_help
+  - bot_challenge
+  - chitchat_comoestas
+  - saludo
+  - despedida
+  - affirm
+  - deny
+  - thanks
+  - need_help
+  - suggestion
+
+# Fuera de alcance
+  - out_of_scope/otro_idioma
+  - out_of_scope/otro
+
+responses:
+
+  ## Tema: síntomas
+  utter_tema_sintomas:
+  - text: "Talvez tengas algunos síntomas, puedo brindarte algunos consejos si estás sientiendo
+            alguno de los siguientes síntomas: \n
+            - Fátiga \n
+            - Estrés \n
+            - Depresión"
+
+  # Respuesta obtenida de H2-12
+  utter_fatiga:
+  - text: "Oh, veo que sientes fatiga 😥. La fatiga o cansancio es uno de los síntomas más comunes de
+            las personas que han superado el cáncer."
+
+  utter_q_afrontar_s:
+  - text: "¿Desear saber algunos consejos para aminorar la fatiga?"
+
+  # Respuesta obtenida de H2-06
+  utter_superar_fatiga:
+  - text: "Aquí hay algunas ideas para superar el cansancio:\n
+           ✔ Planifique su día\n
+           ✔ Ahorre su energía al hacer las cosas de otro modo.\n
+           ✔ Tome siestas breves o tiempos de descanso entre actividades\n
+           ✔ Trate de ir a dormir y despertarse a la misma hora todos los días.\n
+           ✔ Haga lo que le gusta hacer, pero en menor medida.\n
+           ✔ Deje que le ayuden los demás.\n
+           ✔ Elija cómo emplear su energía.\n
+           ✔ Piense en unirse a un grupo de apoyo."
+
+  # Respuesta obtenida de H2-10
+  utter_depresion:
+  - text: "Es común que se sienta abrumada por sus sentimientos ante el diagnóstico de cáncer y después
+           de haberse sometido al tratamiento. Si se siente angustiada o deprimida, hable con su médico o enfermero,
+           ellos pueden remitirla a un orientador o psicólogo especialista con experiencia en tratar los problemas
+           emocionales de quienes padecen cáncer. También puede resultarle de ayuda unirse a un grupo de apoyo para
+           que pueda hablar con otras personas que entiendan exactamente por lo que está pasando."
+
+
+  # Respuesta obtenida de H2-07
+  utter_tension:
+  - text: "Oh, veo que estás estresada  😥. Muchas supervivientes han encontrado
+          que actividades como las que se indican abajo son útiles
+          para abordar sus preocupaciones después de terminado el tratamiento.
+          Pregunte a su médico, a su enfermera, o al trabajador social o
+          a la organización local del cáncer acerca de participar en actividades como estas.\n
+           ✔ Ejercicio\n
+           ✔ La meditación o la relajación pueden ayudarle a reducir el estrés aquietando su mente"
+
+  ## Tema: Iniciar etapa
+
+  # Respuesta obtenida de H2-01
+  utter_iniciar_etapa:
+  - text: "Felicitaciones por haber terminado su tratamiento del cáncer.
+           Cuando el tratamiento del cáncer ya ha terminado, muchas veces este es un
+           periodo para alegrarse. Probablemente usted sienta alivio de haber terminado las
+           exigencias del tratamiento y se está preparando para dejar atrás esa experiencia.
+           No obstante, al mismo tiempo, es probable que sienta tristeza y preocupación."
+
+  utter_q_iniciar_etapa:
+  - text: "Algunos tópicos que puedo aconsejarte en esta nueva fase son los siguientes:\n
+           - Los cuidados de seguimiento\n
+           - Qué mencionar cuando hables con tu médico\n
+           - Nuevos cambios en tus hábitos"
+
+  # Respuesta obtenida de H2-03
+  utter_cuidados_seguimiento:
+  - text: "Una vez terminado el tratamiento de cancer usted debe recibir un plan de cuidados de
+          seguimiento de cancer, el propósito de esto es ver a un médico para exámenes regulares,
+          en las consultas el médico revisará si tiene efectos secundarios del tratamiento y
+          examinará si su cancer ha regresado o se ha disemaninado a otra parte del cuerpo."
+
+  utter_q_que_decir:
+  - text: "¿Desea saber algunos tips sobre que decirle a su médico en sus citas de seguimiento?"
+
+  # Respuesta obtenida de H2-05
+  utter_que_decir:
+  - text: "En cada consulta de seguimiento, mencione cualquier problema de salud que tenga, tal como:\n
+           ■ Síntomas nuevos\n
+           ■ Dolor que le preocupa\n
+           ■ Problemas físicos que obstaculizan su vida diaria o que le molestan, como fatiga, problemas
+           para dormir, problemas sexuales, aumento de peso o adelgazamiento\n
+           ■ Otros problemas de salud que tenga, como enfermedades cardiovasculares, diabetes o artritis\n
+           ■ Medicamentos, vitaminas o hierbas que esté tomando u otros tratamientos que esté usando\n
+           ■ Problemas emocionales, como ansiedad o depresión, que pueda tener ahora o que haya tenido en el pasado\n
+           ■ Cambios en los antecedentes médicos de su familia, como familiares con cáncer\n
+           ■ Cosas de las que quiere saber más, tal como nuevas investigaciones o efectos secundarios"
+
+  # Respuesta obtenida de H2-03
+  utter_cambio_habitos:
+  - text: "Cambios que usted puede pensar hacer:\n
+           - Dejar de fumar\n
+           - Tomar menos alcohol\n
+           - Comer bien, alimentos saludables.\n
+           - Haga ejercicios y mantenga la actividad."
+
+  ## Tema: mitos y verdades
+  # Respuesta obtenida de H2-14
+  utter_mitos_cancer:
+  - text: "Aquí te dejo algunos mitos y verdades del cancer:\n
+           ❌ MITO: No podré tener hijos después de un tratamiento para cáncer cervical.\n
+           ✅ VERDAD: Si usted se somete a una histerectomía o una radiación para tratar el cáncer cervical no podrá tener hijos. Sin embargo procedimientos quirúrgicos nuevos ayudan a mantener la fertilidad de la mujer sin comprometer su supervivencia. Una traquelectomía elimina la cérvix, pero no el útero, lo que aún permite la reproducción. Para cánceres pequeños una biopsia con extracción de tejidos puede ser apropiada y al mismo tiempo mantiene la fertilidad.\n
+           \n
+           ❌ MITO: Tras finalizar el tratamiento, estaré preocupada por el resto de mi vida sobre una reincidencia del cáncer.\n
+           ✅ VERDAD: Si el cáncer cervical recurre, lo más probable es que suceda durante los dos primeros años después del tratamiento. La mayor parte de los pacientes son evaluados durante los cinco años tras la enfermedad, tras los cuales el riesgo de una repetición de la enfermedad es extremadamente bajo."
+
+  ## Tema: efectos secundarios tardíos
+  utter_efectos_secundarios_tardios:
+  - text: "Depende del tratamiento de cancer que tuviste, es posible que hayan efectos secundarios a largo plazo.
+            ¿ Cuál fue el tipo de tratamiento que tuviste ?"
+    buttons:
+      - title: "Quimioterapia"
+        payload: "/quimioterapia"
+      - title: "Radioterapia"
+        payload: "/radioterapia"
+      - title: "Otro"
+        payload: "/otro"
+
+  # Respuesta obtenida de H1-01
+  utter_quimioterapia:
+  - text: "La mayoría de los efectos secundarios de la quimioterapia desaparecen después del tratamiento.
+          Sin embargo, algunos continúan, reaparecen o se desarrollan más tarde. Algunos medicamentos de
+          quimioterapia causan efectos secundarios a largo plazo, como cardiopatías o daños a los nervios,
+           así como problemas de fertilidad. No obstante, muchas personas no presentan problemas a largo plazo
+           a causa de la quimioterapia."
+
+  utter_radioterapia:
+  - text: "Las mujeres pueden experimentar efectos secundarios relacionados con la radiación meses
+            o años después del tratamiento. \n
+           - Estenosis vaginal: tanto la radioterapia con rayo externo  como la braquiterapia pueden
+             causar formación de tejido cicatricial en la vagina. El tejido cicatricial puede causar
+             que la vagina sea más estrecha (estenosis vaginal), con menos capacidad de estirarse,
+             o incluso más corta, lo que ocasiona dolor durante el sexo vaginal. \n
+           - Sequedad vaginal: la sequedad vaginal y el dolor durante las relaciones sexuales pueden
+             ser efectos secundarios a largo plazo de la radiación (tanto de la braquiterapia como de
+             la radioterapia con rayo externo ). \n
+           - Problemas urinarios: la radiación dirigida a la pelvis puede causar cistitis crónica por
+             radiación, sangre en la orina, o una abertura anormal entre la vejiga y la vagina
+             (llamada fístula). Estos efectos secundarios pueden surgir muchos años después de la radioterapia. \n
+           - Huesos debilitados: la radiación a la pelvis puede debilitar los huesos causando fracturas.
+            Las fracturas de cadera son las fracturas más comunes, y pueden ocurrir 2 a 4 años después de
+            la radiación. Se recomiendan pruebas de densidad ósea para vigilar el riesgo de fractura.\n
+           Si usted experimenta efectos secundarios ocasionados por el tratamiento de la radiación, discútalos con el equipo médico que atiende su cáncer."
+
+  utter_otro_tratamiento:
+  - text: "Lo siento aun no tengo el conocimiento para responder los efectos tardíos de este tratamiento."
+
+  ## Tema: duda comun
+  utter_tema_duda_comun:
+  - text: "Puedo ayudarte con algunas preguntes frecuentes que tienen las pacientes.
+            Puedes consultarme las siguientes preguntas frecuentes:\n
+             - ¿El cáncer es hereditario? \n
+             - ¿Cómo afrontar problemas familiares? \n
+             - ¿Me conviene un grupo de ayuda? "
+
+  # Respuesta obtenida de H2-11
+  utter_c_hereditario:
+  - text: "El cáncer de cuello uterino puede ocurrir con mayor frecuencia en algunas familias. Si usted o alguien dentro de su familia tuvo cáncer de cuello uterino, las probabilidades de desarrollar la enfermedad aumentan en comparación a si nadie en la familia lo ha tenido.
+           Algunos investigadores sospechan que algunos casos de esta tendencia familiar son causados por una condición hereditaria que hace que algunas mujeres sean menos capaces de luchar contra la infección por VPH que otras. En otros casos, las mujeres de una familia donde una paciente ha sido diagnosticada, podrían estar más propensas a tener uno o más de los otros factores de riesgo no genéticos."
+
+  # Respuesta obtenida de H2-08
+  utter_problemas_familiares:
+  - text: "Aquí hay algunas ideas que han ayudado a otras personas a manejar los asuntos familiares:\n
+           ■ Haga saber a los demás lo que usted puede hacer a medida que sana; y lo
+           que no deben esperar que haga usted.\n
+           ■ Dese tiempo. Usted y su familia pueden adaptarse con el tiempo a los
+           cambios que trae consigo el cáncer.\n
+           ■ Ayude a los niños en su familia a entender que usted recibió
+           tratamiento para el cáncer y que puede llevarle un tiempo recobrar
+           la energía que solía tener."
+
+  # Respuesta obtenida de H2-09
+  utter_grupo_de_ayuda:
+  - text: "Un grupo de apoyo puede no ser adecuado para todo el mundo. Para algunas personas, oír los
+           problemas de otros puede hacerles sentir peor. O usted puede darse cuenta que su necesidad de un
+           grupo de apoyo cambia con el tiempo."
+
+  ## Tema: Chitchat
+  utter_saludo:
+  - text: "Hola, mi nombre es Victoria!\n
+           Si tu eres una paciente que ha culminado el tratamiento de cancer de cuello uterino,
+           puedo brindarte algunos consejos para esta nueva etapa! Si deseas tambien puedes
+           preguntarme acerca de sintomas o dudas que tengas en esta nueva fase."
+
+  utter_a_comoestas:
+  - text: "Estoy bien. Gracias por preguntar."
+  - text: "Estoy bien. Gracias!"
+  - text: "Hace un poco de calor, pero por lo demás estoy bien"
+  - text: "Hace un poco de frio, pero por lo demás estoy bien"
+
+  utter_iamabot:
+  - text: "Soy un bot, creado para responder tus consultas :)"
+  - text: "Soy VictoriaBot. Estoy hecha de mucha paciencia y amor"
+
+  utter_no_help:
+  - text: "Por ahora eso es todo lo que puedo hacer, así que siéntese libre de probarlo.
+            Si tiene alguna sugerencia sobre lo que debería aprender, ¡hágamelo saber!"
+
+  utter_thanks_for_suggestion:
+  - text: "Gracias por tu sugerencia, la tomaré en cuenta para saber que aprender."
+
+  utter_thanks:
+  - text: "Estoy feliz de ayudar"
+  - text: "Gracias a ti por chatear conmigo"
+
+  utter_p_hay_otra_pregunta:
+  - text: "¿Tienes otra consulta?"
+  - text: "¿Hay otra cosa en la que pueda ayudarte?"
+
+  utter_p_consulta:
+  - text: "¿Cuál es tu consulta?"
+
+  utter_how_help:
+  - text: "Ok, ¿cómo puedo ayudarte?"
+  - text: "¿Qué puedo hacer por ti?"
+
+  utter_despedida:
+  - text: "Chau"
+  - text: "Nos vemos!"
+  - text: "Hasta la próxima"
+  - text: "Fue un placer haber conversado contigo"
+
+
+  ## Tema: Out of scope
+
+  utter_posibilidades:
+  - text: "Puedes preguntarme acerca de:\n
+            - cómo iniciar esta nueva etapa\n
+            - mitos y verdades del cancer \n
+            - sintomas que tengas \n
+            - efectos secundarios del tratamiento"
+
+  utter_rephrase:
+  - text: "Lo siento, no entendí 🤷. ¿Podrías reformularlo?"
+  - text: "No entendí, ¿podrías reformularlo?"
+  - text: "Lo siento, pero no te entendí. ¿Podría reformular lo que acaba de decir?"
+  - text: "Me temo que no entendí lo que acabas de decir. ¿Podrías reformular eso?"
+  - text: "No lo entendí del todo, ¿podrías reformular tu mensaje?"
+  - text: "¿Podrías reformular tu mensaje? No lo entendí, lo siento."
+
+  utter_default:
+  - text: "No entendí, ¿podrías reformularlo?"
+
+  utter_out_of_scope/otro_idioma:
+  - text: "Solo entiendo español. Lo siento."
+
+  utter_out_of_scope/otro:
+  - text: "No puedo ayudarte con eso. Lo siento."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

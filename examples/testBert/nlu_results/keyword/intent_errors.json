@@ -1,0 +1,338 @@
+[
+  {
+    "text": "hey",
+    "intent": "saludo",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "hi",
+    "intent": "saludo",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "buenas noches",
+    "intent": "saludo",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "chau",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "adios",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "nos vemos luego",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "deacuerdo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "claro",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "correcto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "ninguna",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "no me gusta eso",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "por ahora no",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfLe puedo pasar mi cancer a mis hijas?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfMi cancer puede pasar a mis hijas o nietas?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfEs posible que mis hijas contraigan cancer de cuello uterino?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfCu\u00e1les son los s\u00edntomas del c\u00e1ncer de cuello uterino?",
+    "intent": "con_sintomas_c_cervical",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfCuales son los sintomas mas comunes del cancer de cuello uterino?",
+    "intent": "con_sintomas_c_cervical",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "Sintomas comunes del cancer de cuello uterino",
+    "intent": "con_sintomas_c_cervical",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "Me siento cansado, es normal?",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "tengo mucho cansancio",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "no tengo ganas de hacer nada",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfC\u00f3mo superar la fatiga?",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "Alguna recomendaci\u00f3n para setirme menos cansada",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 es lo normal despu\u00e9s del tratamiento de c\u00e1ncer?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 debo hacer acabado mi tratamiento de c\u00e1ncer?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfque debo hacer ahora que he acabado mi tratamiento?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bferes un humano?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfquien eres?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfque eres?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfMis hijos pueden padecer c\u00e1ncer?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfMis hijas pueden tener cancer de cuello uterino tambien?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfMis familiares pueden tener cancer de cuello uterino?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfEl c\u00e1ncer es hereditario?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfC\u00f3mo detectar el c\u00e1ncer de cuello uterino?",
+    "intent": "con_sintomas_c_cervical",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfCuales son los sintomas del cancer cervical?",
+    "intent": "con_sintomas_c_cervical",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfEs normal tener fatiga?",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfhay algun medicamento para que me quite la fatiga?",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfHe acabado mi tratamiento de cancer que deber\u00eda hacer?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfQue habitos deber\u00eda tener acabado mi tratamiento de cancer?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bferes un bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfestoy hablando con un bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  },
+  {
+    "text": "\u00bfestoy hablando con un humano?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "",
+      "confidence": 0.0
+    }
+  }
+]

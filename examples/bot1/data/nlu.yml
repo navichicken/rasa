@@ -13,7 +13,6 @@ nlu:
     - estas
     - hey tu
     - vamos
-    - hey amigo
 
 - intent: goodbye
   examples: |

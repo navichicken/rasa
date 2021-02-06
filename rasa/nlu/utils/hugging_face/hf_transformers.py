@@ -308,11 +308,19 @@ class HFTransformersNLP(Component):
         """
         batch_token_ids = []
         batch_tokens = []
-        for example in batch_examples:
 
+        for example in batch_examples:
+            # print("Antes del preprocesamiento:(Mensaje)")
+            # print("example.as_dict() - ", example.as_dict())
+            # tokeniza cada ejemplo
             example_tokens, example_token_ids = self._tokenize_example(
                 example, attribute
             )
+            #print("Mensaje Tokenizado:")
+            # for example_token in example_tokens:
+            #print(' ', example_token.text)
+
+
             batch_tokens.append(example_tokens)
             batch_token_ids.append(example_token_ids)
 
@@ -720,6 +728,15 @@ class HFTransformersNLP(Component):
                 batch_docs = self._get_docs_for_batch(batch_messages, attribute)
 
                 for index, ex in enumerate(batch_messages):
+                    # logger.info("TRAIN HFTTransformers NLP")
+                    # logger.info("Mensaje")
+                    # logger.info(ex.as_dict())
+                    # logger.info("Atributte")
+                    # logger.info(LANGUAGE_MODEL_DOCS[attribute])
+                    # logger.info("DOC")
+                    # logger.info(batch_docs[index]['sequence_features'].shape)
+                    # logger.info(batch_docs[index]['sentence_features'].shape)
+                    # logger.info(batch_docs[index])
 
                     ex.set(LANGUAGE_MODEL_DOCS[attribute], batch_docs[index])
 
@@ -736,6 +753,12 @@ class HFTransformersNLP(Component):
         # and their features are stored by the model itself.
         for attribute in {TEXT, ACTION_TEXT}:
             if message.get(attribute):
+                # logger.info("Texto antes de procesar")
+                # logger.info(message.as_dict())
+                # logger.info("Agregando features")
+                # logger.info(self._get_docs_for_batch(
+                #         [message], attribute=attribute, inference_mode=True
+                #     )[0])
                 message.set(
                     LANGUAGE_MODEL_DOCS[attribute],
                     self._get_docs_for_batch(

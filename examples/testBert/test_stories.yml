@@ -2,16 +2,16 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: hereditary path 1
+- story: happy path 1
   steps:
-  - intent: saludo
-  - action: utter_bot_saludo
-  - action: utter_p_consulta
-  - intent: con_c_hereditario
-  - action: utter_c_hereditario
-  - action: utter_p_hay_otra_pregunta
-  - intent: affirm
-  - action: utter_p_consulta
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
 
 - story: happy path 2
   steps:

@@ -240,9 +240,11 @@ class LanguageModelFeaturizer(DenseFeaturizer):
         Returns: List of token ids and token strings.
         """
         split_token_ids = self.tokenizer.encode(text, add_special_tokens=False)
-
+        logger.info("SPLIT_TOKEN_IDS")
+        logger.info(split_token_ids)
         split_token_strings = self.tokenizer.convert_ids_to_tokens(split_token_ids)
-
+        logger.info("split_token_strings")
+        logger.info(split_token_strings)
         return split_token_ids, split_token_strings
 
     def _add_lm_specific_special_tokens(
@@ -808,6 +810,16 @@ class LanguageModelFeaturizer(DenseFeaturizer):
                 batch_docs = self._get_docs_for_batch(batch_messages, attribute)
 
                 for index, ex in enumerate(batch_messages):
+                    # logger.info("TRAIN Language Model Featurizer")
+                    # logger.info("Mensaje")
+                    # logger.info(ex.as_dict())
+                    # logger.info("Atributte")
+                    # logger.info(attribute)
+                    # logger.info("DOC")
+                    # logger.info(batch_docs[index]['sequence_features'].shape)
+                    # logger.info(batch_docs[index]['sentence_features'].shape)
+                    # logger.info(batch_docs[index])
+
                     self._set_lm_features(batch_docs[index], ex, attribute)
                 batch_start_index += batch_size
 

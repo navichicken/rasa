@@ -1,0 +1,32 @@
+language: es
+
+pipeline:
+  # Analizador  - NLU
+  - name: WhitespaceTokenizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+
+    # Clasificador
+  - name: DIETClassifier
+    # Hiperparámetros
+    epochs: 100
+    learning_rate: 0.001
+    drop_rate: 0.2
+    weight_sparsity: 0.8
+    batch_size: [ 64, 256 ]
+    embedding_dimension: 20
+    entity_recognition: False
+
+policies:
+  # Predictor  - DL
+  - name: LSTMPolicy
+     # Hiperparámetros
+    max_history: 5
+    epochs: 50
+    batch_size: 32
+    validation_split: 0.2
+  - name: RulePolicy

@@ -69,8 +69,9 @@ class WhitespaceTokenizer(Tokenizer):
         # https://stackoverflow.com/questions/12746458/python-unicode-regular-expression-matching-failing-with-some-unicode-characters
 
         # remove 'not a word character' if
+        # no es un caracter de palabra si
         words = regex.sub(
-            # there is a space or an end of a string after it
+            # hay un espacio o un fin de cadena despues de este
             r"[^\w#@&]+(?=\s|$)|"
             # there is a space or beginning of a string before it
             # not followed by a number

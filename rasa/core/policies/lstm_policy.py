@@ -194,7 +194,7 @@ class LSTMPolicy(Policy):
     def model_architecture(
         self, input_shape: Tuple[int, int], output_shape: Tuple[int, Optional[int]]
     ) -> tf.keras.models.Sequential:
-        """Build a keras model and return a compiled model."""
+        """ Se contruye el modelo BiLSTM - return a compiled model."""
 
         from tensorflow.keras.models import Sequential
         from tensorflow.keras.layers import (

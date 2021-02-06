@@ -1,0 +1,110 @@
+{
+  "con_sintomas_c_cervical": {
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1-score": 0.888888888888889,
+    "support": 5,
+    "confused_with": {
+      "con_superar_fatiga": 1
+    }
+  },
+  "con_fatiga": {
+    "precision": 0.375,
+    "recall": 0.5,
+    "f1-score": 0.42857142857142855,
+    "support": 6,
+    "confused_with": {
+      "saludo": 1,
+      "con_superar_fatiga": 1
+    }
+  },
+  "goodbye": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5,
+    "confused_with": {
+      "saludo": 3,
+      "affirm": 2
+    }
+  },
+  "saludo": {
+    "precision": 0.3,
+    "recall": 0.6,
+    "f1-score": 0.4,
+    "support": 10,
+    "confused_with": {
+      "deny": 2,
+      "con_fatiga": 1
+    }
+  },
+  "affirm": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 6,
+    "confused_with": {
+      "saludo": 6
+    }
+  },
+  "con_c_hereditario": {
+    "precision": 0.5384615384615384,
+    "recall": 1.0,
+    "f1-score": 0.7000000000000001,
+    "support": 7,
+    "confused_with": {}
+  },
+  "deny": {
+    "precision": 0.2,
+    "recall": 0.16666666666666666,
+    "f1-score": 0.1818181818181818,
+    "support": 6,
+    "confused_with": {
+      "saludo": 3,
+      "con_fatiga": 2
+    }
+  },
+  "bot_challenge": {
+    "precision": 0.6666666666666666,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.4444444444444444,
+    "support": 6,
+    "confused_with": {
+      "saludo": 1,
+      "deny": 1
+    }
+  },
+  "con_normalidad": {
+    "precision": 1.0,
+    "recall": 0.2,
+    "f1-score": 0.33333333333333337,
+    "support": 5,
+    "confused_with": {
+      "con_c_hereditario": 3,
+      "con_superar_fatiga": 1
+    }
+  },
+  "con_superar_fatiga": {
+    "precision": 0.25,
+    "recall": 0.2,
+    "f1-score": 0.22222222222222224,
+    "support": 5,
+    "confused_with": {
+      "con_c_hereditario": 2,
+      "deny": 1
+    }
+  },
+  "accuracy": 0.4098360655737705,
+  "macro avg": {
+    "precision": 0.43301282051282053,
+    "recall": 0.38,
+    "f1-score": 0.35992784992785,
+    "support": 61
+  },
+  "weighted avg": {
+    "precision": 0.41752837326607817,
+    "recall": 0.4098360655737705,
+    "f1-score": 0.3680528942824025,
+    "support": 61
+  }
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "text": "nel",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6080647110939026
+    }
+  },
+  {
+    "text": "\u00bfMis hijas pueden tener cancer de cuello uterino tambien?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "con_normalidad",
+      "confidence": 0.2136487066745758
+    }
+  },
+  {
+    "text": "\u00bfMis familiares pueden tener cancer de cuello uterino?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "con_sintomas_c_cervical",
+      "confidence": 0.38687875866889954
+    }
+  },
+  {
+    "text": "\u00bfLe puedo pasar mi cancer a mis hijas?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "con_normalidad",
+      "confidence": 0.41179120540618896
+    }
+  },
+  {
+    "text": "\u00bfMi cancer puede pasar a mis hijas o nietas?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "con_normalidad",
+      "confidence": 0.3599475026130676
+    }
+  },
+  {
+    "text": "\u00bfEs posible que mis hijas contraigan cancer de cuello uterino?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "con_superar_fatiga",
+      "confidence": 0.25517144799232483
+    }
+  },
+  {
+    "text": "tengo mucho cansancio",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.2791251540184021
+    }
+  },
+  {
+    "text": "no tengo ganas de hacer nada",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.8280230164527893
+    }
+  },
+  {
+    "text": "estoy sin ganas de hacer nada",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4446762204170227
+    }
+  },
+  {
+    "text": "quiero sentirme menos cansada",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.19935724139213562
+    }
+  },
+  {
+    "text": "hay alguna forma de ya no sentirme cansada",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.48731085658073425
+    }
+  },
+  {
+    "text": "\u00bfhay algun medicamento para que me quite la fatiga?",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.25124120712280273
+    }
+  },
+  {
+    "text": "\u00bfque eres?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.47941604256629944
+    }
+  }
+]

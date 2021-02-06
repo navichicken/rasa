@@ -1,0 +1,43 @@
+version: "2.0"
+stories:
+- story: happy path 1 (C:\Users\henry\AppData\Local\Temp\tmpnauo2h_u\96df6e27784e494faa5d62c87f18d93a_test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet  # predicted: utter_bot_saludo
+  - intent: mood_great
+  - action: utter_happy  # predicted: utter_bot_saludo
+- story: happy path 2 (C:\Users\henry\AppData\Local\Temp\tmpnauo2h_u\96df6e27784e494faa5d62c87f18d93a_test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet  # predicted: utter_bot_saludo
+  - intent: mood_great
+  - action: utter_happy  # predicted: utter_bot_saludo
+  - intent: goodbye
+  - action: utter_goodbye
+- story: sad path 1 (C:\Users\henry\AppData\Local\Temp\tmpnauo2h_u\96df6e27784e494faa5d62c87f18d93a_test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet  # predicted: utter_bot_saludo
+  - intent: mood_unhappy
+  - action: utter_cheer_up  # predicted: utter_bot_saludo
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: affirm
+  - action: utter_happy  # predicted: action_listen
+- story: sad path 2 (C:\Users\henry\AppData\Local\Temp\tmpnauo2h_u\96df6e27784e494faa5d62c87f18d93a_test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet  # predicted: utter_bot_saludo
+  - intent: mood_unhappy
+  - action: utter_cheer_up  # predicted: utter_bot_saludo
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: action_listen
+- story: sad path 3 (C:\Users\henry\AppData\Local\Temp\tmpnauo2h_u\96df6e27784e494faa5d62c87f18d93a_test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet  # predicted: utter_bot_saludo
+  - intent: mood_unhappy
+  - action: utter_cheer_up  # predicted: utter_bot_saludo
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: action_listen

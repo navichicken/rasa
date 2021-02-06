@@ -702,11 +702,11 @@ class DIETClassifier(IntentClassifier, EntityExtractor):
 
         if self.component_config[BILOU_FLAG]:
             bilou_utils.apply_bilou_schema(training_data)
-
+        print("label_id_index_mapping")
         label_id_index_mapping = self._label_id_index_mapping(
             training_data, attribute=INTENT
         )
-
+        print(label_id_index_mapping)
         if not label_id_index_mapping:
             # no labels are present to train
             return RasaModelData()
@@ -846,6 +846,10 @@ class DIETClassifier(IntentClassifier, EntityExtractor):
                 }
                 for label_idx, score in ranking
             ]
+            # logger.info("Label")
+            # logger.info(label)
+            # logger.info("Ranking label")
+            # logger.info(label_ranking)
 
         return label, label_ranking
 
@@ -1827,5 +1831,6 @@ class DIET(TransformerRasaModel):
         scores = self._tf_layers[f"loss.{LABEL}"].confidence_from_sim(
             sim_all, self.config[SIMILARITY_TYPE]
         )
-
+        logger.info("Scores")
+        # logger.info(scores)
         return {"i_scores": scores}

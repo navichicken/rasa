@@ -1,12 +1,22 @@
-language: en
+language: es
 
 pipeline:
   - name: "SpacyNLP"
   - name: "SpacyTokenizer"
   - name: "SpacyFeaturizer"
   - name: "DIETClassifier"
+    epochs: 100
+    num_transformer_layers: 4
+    transformer_size: 256
+    use_masked_language_model: True
+    drop_rate: 0.25
+    weight_sparsity: 0.7
+    batch_size: [64, 256]
+    embedding_dimension: 30
+    hidden_layer_sizes:
+      text: [512, 128]
+
     entity_recognition: False
-    epochs: 50
 
 policies:
   - name: TEDPolicy

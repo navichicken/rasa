@@ -1,0 +1,110 @@
+{
+  "con_superar_fatiga": {
+    "precision": 1.0,
+    "recall": 0.4,
+    "f1-score": 0.5714285714285715,
+    "support": 5,
+    "confused_with": {
+      "": 3
+    }
+  },
+  "con_sintomas_c_cervical": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5,
+    "confused_with": {
+      "": 5
+    }
+  },
+  "con_normalidad": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5,
+    "confused_with": {
+      "": 5
+    }
+  },
+  "con_c_hereditario": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 7,
+    "confused_with": {
+      "": 7
+    }
+  },
+  "saludo": {
+    "precision": 1.0,
+    "recall": 0.7,
+    "f1-score": 0.8235294117647058,
+    "support": 10,
+    "confused_with": {
+      "": 3
+    }
+  },
+  "goodbye": {
+    "precision": 1.0,
+    "recall": 0.4,
+    "f1-score": 0.5714285714285715,
+    "support": 5,
+    "confused_with": {
+      "": 3
+    }
+  },
+  "con_fatiga": {
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.5,
+    "support": 6,
+    "confused_with": {
+      "": 4
+    }
+  },
+  "bot_challenge": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 6,
+    "confused_with": {
+      "": 6
+    }
+  },
+  "deny": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1-score": 0.6666666666666666,
+    "support": 6,
+    "confused_with": {
+      "": 3
+    }
+  },
+  "affirm": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1-score": 0.6666666666666666,
+    "support": 6,
+    "confused_with": {
+      "": 3
+    }
+  },
+  "micro avg": {
+    "precision": 1.0,
+    "recall": 0.3114754098360656,
+    "f1-score": 0.475,
+    "support": 61
+  },
+  "macro avg": {
+    "precision": 0.6,
+    "recall": 0.2833333333333333,
+    "f1-score": 0.3799719887955182,
+    "support": 61
+  },
+  "weighted avg": {
+    "precision": 0.6229508196721312,
+    "recall": 0.3114754098360656,
+    "f1-score": 0.40900950544152087,
+    "support": 61
+  }
+}

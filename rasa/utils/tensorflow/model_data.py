@@ -212,7 +212,9 @@ class RasaModelData:
         for data in self.data[key][sub_key]:
             if data.size > 0:
                 number_of_features += data[0].shape[-1]
-
+                logger.info("number_of_features of")
+                logger.info("key-> ", key, " - subkey -> ", sub_key)
+                logger.info("data[0].shape[-1] -> ", data[0].shape[-1])
         return number_of_features
 
     def add_data(self, data: Data, key_prefix: Optional[Text] = None) -> None:

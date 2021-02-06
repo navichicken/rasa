@@ -1,0 +1,26 @@
+[
+  {
+    "text": "quiero sentirme menos cansada",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.19935724139213562
+    }
+  },
+  {
+    "text": "\u00bfque eres?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.47941604256629944
+    }
+  },
+  {
+    "text": "\u00bfLe puedo pasar mi cancer a mis hijas?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "con_normalidad",
+      "confidence": 0.41179120540618896
+    }
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "text": "hey",
+    "intent": "saludo",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.767017662525177
+    }
+  },
+  {
+    "text": "hey tu",
+    "intent": "saludo",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5980967879295349
+    }
+  },
+  {
+    "text": "adios",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.6743432283401489
+    }
+  },
+  {
+    "text": "nos vemos luego",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4320398271083832
+    }
+  },
+  {
+    "text": "deacuerdo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "con_fatiga",
+      "confidence": 0.2724936008453369
+    }
+  },
+  {
+    "text": "eso suena bien",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.44171085953712463
+    }
+  },
+  {
+    "text": "nunca",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.4092545807361603
+    }
+  },
+  {
+    "text": "ninguna",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "con_superar_fatiga",
+      "confidence": 0.8435766100883484
+    }
+  },
+  {
+    "text": "\u00bfEl c\u00e1ncer es hereditario?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "con_sintomas_c_cervical",
+      "confidence": 0.5914996266365051
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 es lo normal despu\u00e9s del tratamiento de c\u00e1ncer?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "con_sintomas_c_cervical",
+      "confidence": 0.5500308871269226
+    }
+  },
+  {
+    "text": "bye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.937410295009613
+    }
+  },
+  {
+    "text": "si",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.48715272545814514
+    }
+  },
+  {
+    "text": "correcto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "con_sintomas_c_cervical",
+      "confidence": 0.42705389857292175
+    }
+  },
+  {
+    "text": "ok",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.7314441204071045
+    }
+  },
+  {
+    "text": "nel",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.4265836179256439
+    }
+  },
+  {
+    "text": "no me gusta eso",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "con_fatiga",
+      "confidence": 0.38020434975624084
+    }
+  },
+  {
+    "text": "\u00bfEs posible que mis hijas contraigan cancer de cuello uterino?",
+    "intent": "con_c_hereditario",
+    "intent_prediction": {
+      "name": "con_sintomas_c_cervical",
+      "confidence": 0.6669266819953918
+    }
+  },
+  {
+    "text": "\u00bfC\u00f3mo superar la fatiga?",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "con_sintomas_c_cervical",
+      "confidence": 0.7400197386741638
+    }
+  },
+  {
+    "text": "quiero sentirme menos cansada",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "con_fatiga",
+      "confidence": 0.4141554534435272
+    }
+  },
+  {
+    "text": "hay alguna forma de ya no sentirme cansada",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "con_fatiga",
+      "confidence": 0.38530489802360535
+    }
+  }
+]

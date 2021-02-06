@@ -1,0 +1,290 @@
+[
+  {
+    "text": "buenas tardes",
+    "intent": "saludo",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.194774407757523
+    }
+  },
+  {
+    "text": "hey tu",
+    "intent": "saludo",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.244429702584753
+    }
+  },
+  {
+    "text": "hola que tal",
+    "intent": "saludo",
+    "intent_prediction": {
+      "name": "con_fatiga",
+      "confidence": 0.15009031701247913
+    }
+  },
+  {
+    "text": "chau",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.28376426709202957
+    }
+  },
+  {
+    "text": "nos vemos luego",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.16495396519964875
+    }
+  },
+  {
+    "text": "bye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.3024801824091823
+    }
+  },
+  {
+    "text": "deacuerdo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.23202104434509563
+    }
+  },
+  {
+    "text": "correcto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.23223631542750872
+    }
+  },
+  {
+    "text": "ok",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.5418623820823602
+    }
+  },
+  {
+    "text": "nunca",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.28262554166291687
+    }
+  },
+  {
+    "text": "no hay forma",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "con_fatiga",
+      "confidence": 0.17316896499944914
+    }
+  },
+  {
+    "text": "por ahora no",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.15264972447760222
+    }
+  },
+  {
+    "text": "tengo mucho cansancio",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.16817978757893573
+    }
+  },
+  {
+    "text": "\u00bfC\u00f3mo superar la fatiga?",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.2299628291124092
+    }
+  },
+  {
+    "text": "Alguna recomendaci\u00f3n para setirme menos cansada",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.25393004115688034
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 debo hacer acabado mi tratamiento de c\u00e1ncer?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.43539044135769916
+    }
+  },
+  {
+    "text": "\u00bfHe acabado mi tratamiento de cancer que deber\u00eda hacer?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.4274992140428288
+    }
+  },
+  {
+    "text": "\u00bfQue habitos deber\u00eda tener acabado mi tratamiento de cancer?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.4428359544914145
+    }
+  },
+  {
+    "text": "\u00bferes un bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.13704592240351707
+    }
+  },
+  {
+    "text": "\u00bfestoy hablando con un bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "con_fatiga",
+      "confidence": 0.16834855139215643
+    }
+  },
+  {
+    "text": "\u00bfestoy hablando con un humano?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "con_c_hereditario",
+      "confidence": 0.18768767022898963
+    }
+  },
+  {
+    "text": "hey",
+    "intent": "saludo",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.2891403572338516
+    }
+  },
+  {
+    "text": "adios",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.252404939420275
+    }
+  },
+  {
+    "text": "chao",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.3196375834047586
+    }
+  },
+  {
+    "text": "si",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.24252539338887644
+    }
+  },
+  {
+    "text": "claro",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.21258128128511278
+    }
+  },
+  {
+    "text": "eso suena bien",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.223984309928004
+    }
+  },
+  {
+    "text": "nel",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.21831450100460253
+    }
+  },
+  {
+    "text": "no me gusta eso",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "con_fatiga",
+      "confidence": 0.33039166131076636
+    }
+  },
+  {
+    "text": "\u00bfC\u00f3mo detectar el c\u00e1ncer de cuello uterino?",
+    "intent": "con_sintomas_c_cervical",
+    "intent_prediction": {
+      "name": "con_superar_fatiga",
+      "confidence": 0.33089598053575503
+    }
+  },
+  {
+    "text": "\u00bfEs normal tener fatiga?",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "con_superar_fatiga",
+      "confidence": 0.21185432395992734
+    }
+  },
+  {
+    "text": "Ultimamente he estado muy cansado, es normal?",
+    "intent": "con_fatiga",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.1554694744199232
+    }
+  },
+  {
+    "text": "quiero sentirme menos cansada",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "con_fatiga",
+      "confidence": 0.20554158867179317
+    }
+  },
+  {
+    "text": "hay alguna forma de ya no sentirme cansada",
+    "intent": "con_superar_fatiga",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.183270526546089
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 es lo normal despu\u00e9s del tratamiento de c\u00e1ncer?",
+    "intent": "con_normalidad",
+    "intent_prediction": {
+      "name": "con_superar_fatiga",
+      "confidence": 0.20438446292008047
+    }
+  },
+  {
+    "text": "\u00bfque eres?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "saludo",
+      "confidence": 0.24736109909051787
+    }
+  }
+]

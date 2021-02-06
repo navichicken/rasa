@@ -1,0 +1,16 @@
+language: es
+
+pipeline:
+  # Analizador  - NLU
+- name: KeywordIntentClassifier
+  case_sensitive: False
+
+policies:
+  # Predictor  - DL
+  - name: LSTMPolicy
+     # Hiperparámetros
+    max_history: 5
+    epochs: 50
+    batch_size: 32
+    validation_split: 0.2
+  - name: RulePolicy
